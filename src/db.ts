@@ -41,10 +41,10 @@ export class Database extends Dexie {
 
     constructor(name: string) {
         super(name);
-        this.version(1).stores({
+        this.version(2).stores({
             users: "&pubkey, npub, name, displayName, image, banner, bio, nip05, lud06, lud16, about, zapService, event",
             events: "&id, pubkey, content, kind, createdAt, relay, [kind+pubkey]",
-            eventTags: "id, tagvalue, tag, value, eventId",
+            eventTags: "id, tagValue, tag, value, eventId",
         });
     }
 }
