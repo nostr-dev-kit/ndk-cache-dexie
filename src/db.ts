@@ -39,8 +39,8 @@ export class Database extends Dexie {
     events!: Table<Event>;
     eventTags!: Table<EventTag>;
 
-    constructor() {
-        super("nostr-dev-kit-dexie-cache");
+    constructor(name: string) {
+        super(name);
         this.version(1).stores({
             users: "&pubkey, npub, name, displayName, image, banner, bio, nip05, lud06, lud16, about, zapService, event",
             events: "&id, pubkey, content, kind, createdAt, relay, [kind+pubkey]",
@@ -49,4 +49,13 @@ export class Database extends Dexie {
     }
 }
 
-export const db = new Database();
+export let db: Database;
+
+/**
+ * Create database
+ *
+ * @param name - Database name
+ */
+export function createDatabase(name: string) {
+    db = new Database(name);
+}

@@ -3,9 +3,14 @@ import { NDKEvent, NDKSubscription } from "@nostr-dev-kit/ndk";
 import _debug from "debug";
 import { matchFilter } from "nostr-tools";
 
-import { db } from "./db";
+import { createDatabase, db } from "./db";
 
 interface DexieAdapterOptions {
+    /**
+     * The name of the database to use
+     */
+    dbName?: string;
+
     /**
      * Debug instance to use for logging
      */
@@ -24,6 +29,7 @@ export default class DexieAdapter implements NDKCacheAdapter {
     readonly locking;
 
     constructor(opts: DexieAdapterOptions = {}) {
+        createDatabase(opts.dbName || "ndk");
         this.debug = opts.debug || _debug("ndk:dexie-adapter");
         this.locking = true;
         this.expirationTime = opts.expirationTime || 3600;
@@ -232,8 +238,7 @@ export default class DexieAdapter implements NDKCacheAdapter {
         const hasAllKeys = filterKeys.length === f.length && f.every((k) => filterKeys.includes(k));
 
         if (hasAllKeys && filter.kinds && filter.authors) {
-            for (const _kind of filter.kinds) {
-                const kind = parseInt(_kind as any);
+            for (const kind of filter.kinds) {
                 const replaceableKind = kind >= 30000 && kind < 40000;
 
                 if (!replaceableKind) continue;

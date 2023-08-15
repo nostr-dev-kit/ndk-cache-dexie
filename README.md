@@ -9,7 +9,7 @@ NDK will attempt to use the Dexie adapter to store users, events, and tags. The 
 ### Install
 
 ```
-npm add @nostr-dev-kit/ndk-cache-dexie
+pnpm add @nostr-dev-kit/ndk-cache-dexie
 ```
 
 ### Add as a cache adapter
@@ -17,7 +17,7 @@ npm add @nostr-dev-kit/ndk-cache-dexie
 ```ts
 import DexieAdapter from "@nostr-dev-kit/ndk-cache-dexie";
 
-const dexieAdapter = new DexieAdapter();
+const dexieAdapter = new DexieAdapter({ dbName: 'your-db-name' });
 const ndk = new NDK({cacheAdapter: dexieAdapter, ...other config options});
 ```
 

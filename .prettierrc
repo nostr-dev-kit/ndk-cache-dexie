@@ -5,17 +5,10 @@
     "semi": true,
     "trailingComma": "es5",
     "printWidth": 100,
-    "importOrder": [
-        "^@core/(.*)$",
-        "^@server/(.*)$",
-        "^@ui/(.*)$",
-        "^[./]"
-    ],
+    "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
     "importOrderSeparation": true,
     "importOrderSortSpecifiers": true,
-    "plugins": [
-        "@trivago/prettier-plugin-sort-imports"
-    ],
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
     "overrides": [
         {
             "files": "*.svelte",
