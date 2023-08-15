@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@nostr-dev-kit/ndk':
-    specifier: ^0.8.14
-    version: 0.8.14(typescript@5.1.6)
+    specifier: ^0.8.16
+    version: 0.8.16(typescript@5.1.6)
   debug:
     specifier: ^4.3.4
     version: 4.3.4
@@ -684,8 +684,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@nostr-dev-kit/ndk@0.8.14(typescript@5.1.6):
-    resolution: {integrity: sha512-aVYRRAypZDrnfkWWHWK+t6W/mv9yJflwMn4gYuPKCL8qUuP98QFuCO7yVbh+cWlyVQXQa+B64BDhg/oP2AIZzA==}
+  /@nostr-dev-kit/ndk@0.8.16(typescript@5.1.6):
+    resolution: {integrity: sha512-9GPNswTe72fduuqKBjGuwIGgqMmfHYkHOstyEq91QLRr5PuDdTiDkk7Pe2hQCENtI8t1q/AQVpbsARy/RzfqHw==}
     dependencies:
       '@noble/hashes': 1.3.1
       '@noble/secp256k1': 2.0.0

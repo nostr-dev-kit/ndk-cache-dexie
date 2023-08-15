@@ -5,6 +5,8 @@ import { matchFilter } from "nostr-tools";
 
 import { createDatabase, db } from "./db";
 
+export { db } from "./db";
+
 interface NDKCacheAdapterDexieOptions {
     /**
      * The name of the database to use

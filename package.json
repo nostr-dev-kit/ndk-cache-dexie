@@ -1,6 +1,6 @@
 {
   "name": "@nostr-dev-kit/ndk-cache-dexie",
-  "version": "0.8.15-3",
+  "version": "0.8.16-1",
   "description": "NDK Dexie Cache Adapter",
   "license": "MIT",
   "bugs": {
@@ -48,7 +48,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@nostr-dev-kit/ndk": "^0.8.14",
+    "@nostr-dev-kit/ndk": "^0.8.16",
     "debug": "^4.3.4",
     "dexie": "^3.2.4",
     "nostr-tools": "^1.14.0"
