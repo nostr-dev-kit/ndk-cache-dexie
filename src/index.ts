@@ -5,7 +5,7 @@ import { matchFilter } from "nostr-tools";
 
 import { createDatabase, db } from "./db";
 
-interface DexieAdapterOptions {
+interface NDKCacheAdapterDexieOptions {
     /**
      * The name of the database to use
      */
@@ -23,12 +23,12 @@ interface DexieAdapterOptions {
     expirationTime?: number;
 }
 
-export default class DexieAdapter implements NDKCacheAdapter {
+export default class NDKCacheAdapterDexie implements NDKCacheAdapter {
     public debug: debug.Debugger;
     private expirationTime;
     readonly locking;
 
-    constructor(opts: DexieAdapterOptions = {}) {
+    constructor(opts: NDKCacheAdapterDexieOptions = {}) {
         createDatabase(opts.dbName || "ndk");
         this.debug = opts.debug || _debug("ndk:dexie-adapter");
         this.locking = true;

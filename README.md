@@ -15,9 +15,9 @@ pnpm add @nostr-dev-kit/ndk-cache-dexie
 ### Add as a cache adapter
 
 ```ts
-import DexieAdapter from "@nostr-dev-kit/ndk-cache-dexie";
+import NDKCacheAdapterDexie from "@nostr-dev-kit/ndk-cache-dexie";
 
-const dexieAdapter = new DexieAdapter({ dbName: 'your-db-name' });
+const dexieAdapter = new NDKCacheAdapterDexie({ dbName: 'your-db-name' });
 const ndk = new NDK({cacheAdapter: dexieAdapter, ...other config options});
 ```
 
