@@ -58,7 +58,7 @@ export default class NDKCacheAdapterDexie implements NDKCacheAdapter {
     }
 
     public async setEvent(event: NDKEvent, _filter: NDKFilter, relay?: NDKRelay): Promise<void> {
-        if (event.kind === 0) {
+        if (false) {
             // This is a user profile event, create/update a user.
             const user = new NDKUser({ hexpubkey: event.pubkey });
             const profile = profileFromEvent(event, {});
